@@ -1,5 +1,12 @@
+/*
+ * developed by :@ChetnaBisen
+ *
+ *
+*/
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Tictactoe {
     private static ArrayList<ArrayList<String> > board;
@@ -24,6 +31,28 @@ public class Tictactoe {
             playerSymbol = "O";
             cpuSymbol = "X";
         }
+
+    }
+
+//displaying board
+    public static void displayBoard() {
+        System.out.println(board.get(0).get(0)+ " | " +board.get(0).get(1)+ " | " +board.get(0).get(2));
+        System.out.println("----------");
+        System.out.println(board.get(1).get(0)+ " | " +board.get(1).get(1)+ " | " +board.get(1).get(2));
+        System.out.println("----------");
+        System.out.println(board.get(2).get(0)+ " | " +board.get(2).get(1)+ " | " +board.get(2).get(2)+"\n");
+    }
+
+//main method
+    public static void main(String args[]){
+        Tictactoe ticTacToe = new Tictactoe();
+        ticTacToe.initBoard();
+        Scanner choice = new Scanner(System.in);
+        System.out.println("Enter the Symbol Choice ");
+        int symChoice = choice.nextInt();
+        ticTacToe.chooseSymbol(symChoice);
+        ticTacToe.displayBoard();
+
 
     }
 }
